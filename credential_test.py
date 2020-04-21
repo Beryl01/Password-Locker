@@ -5,7 +5,7 @@ class TestUser(unittest.TestCase):
         """
         Set up method to run before each test cases.
         """
-        self.new_credential = Credential("user_name", "password", "email@example.com")# create credential object
+        self.new_credential = Credential("user_name", "password", "email@example.com")
 
     def tearDown(self):
         """
@@ -21,4 +21,20 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_credential.password, "password")
         self.assertEqual(self.new_credential.email, "email@example.com")
 
-   
+    def test_save_cred(self):
+        """
+        test_save_cred test case to test if the credential object is saved into
+        the credentials array
+        """
+        self.new_credential.save_credential()  # save the new credential
+        self.assertEqual(len(Credential.credential_array), 1)
+
+    def test_display_credentials(self):
+        """
+        method that returns a list of saved credentials
+        """
+        self.assertEqual(Credential.display_credential(), Credential.credential_array)
+
+
+if __name__ == '__main__':
+    unittest.main()
