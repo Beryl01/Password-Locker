@@ -80,7 +80,7 @@ def main():
             l_name = input()
 
             print("Phone number")
-            p_number = input()
+            p_number = int(input())
 
             print("Email address")
             e_address = input()
@@ -112,7 +112,7 @@ def main():
             l_name = input()
 
             print("Phone number")
-            p_number = input()
+            p_number = int(input())
 
             print("Email address")
             e_address = input()
@@ -120,7 +120,7 @@ def main():
             print("Enter username")
             user_name = input()
 
-            print("Enter Password or a password can be generated for you")
+            print("A password will be generated for you")
             pword = input()
 
             s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
