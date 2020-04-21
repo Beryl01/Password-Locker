@@ -52,3 +52,104 @@ def display_cred():
     """
     return Credential.display_credential()
 
+def main():
+
+    print("Password Locker, choose your path from the list of allowed actions")
+
+    while True:
+        print("""Allowed Actions: 
+        \n ad - create a new user account with a user-defined password
+        \n ag - create a new user account with a auto-generated password
+        \n da - display all user accounts 
+        \n ex -exit the contact list 
+        \n""")
+
+        short_code = input().lower()
+
+        if short_code == 'ad':
+            print("New User")
+            print("-"*10)
+            print("What site do you want to create an account?")
+            site = input()
+            print(f"Good you are in {site}")
+
+            print("First name")
+            f_name = input()
+
+            print("Last name")
+            l_name = input()
+
+            print("Phone number")
+            p_number = input()
+
+            print("Email address")
+            e_address = input()
+
+            print("Enter username")
+            user_name = input()
+
+            print("Enter Password")
+            pword = input()
+
+            save_user(create_user(f_name, l_name, p_number, e_address))# create and save new user account.
+            save_cred(create_credential(user_name, pword, e_address))# create and save a credential listing for the above user
+            print('\n')
+            print(f" A new {site} account by {f_name} {l_name} has successfully been created")
+            print(f" The username is {user_name} and the password is {pword}")
+            print('\n')
+
+        elif short_code == 'ag':
+            print("New User")
+            print("-" * 10)
+            print("What site do you want to create an account?")
+            site = input()
+            print(f"Good you are in {site}?")
+
+            print("First name")
+            f_name = input()
+
+            print("Last name")
+            l_name = input()
+
+            print("Phone number")
+            p_number = input()
+
+            print("Email address")
+            e_address = input()
+
+            print("Enter username")
+            user_name = input()
+
+            print("Enter Password...Hint: a password can be generated for you...")
+            pword = input()
+
+            s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+            pword = "".join(random.sample(s, 8))
+            save_user(create_user(f_name,l_name,p_number,e_address))  # create and save new user account.
+            save_cred(create_credential(user_name, pword, e_address))  # create and save a credential listing for the above user
+            print('\n')
+            print(f" A new {site} account by {f_name} {l_name} has successfully been created")
+            print(f" The username is {user_name} and the password is {pword}")
+            print('\n')
+
+        elif short_code == 'da':
+            if display_user():
+                print("Here is a list of all your user accounts")
+                print('\n')
+
+                for user in display_user():
+                    print(f"{user.first_name} {user.last_name} has an account for {site}")
+
+                print('\n')
+            else:
+                print('\n')
+                print("You don't seem to have any existing accounts")
+                print('\n')
+        elif short_code == "ex":
+            print(":/ See you soon then...")
+            break
+        else:
+            print(" :( Only key in the allowed actions !!")
+
+if __name__ == '__main__':
+    main()
