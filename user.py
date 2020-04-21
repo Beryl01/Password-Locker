@@ -12,17 +12,6 @@ class User:
         self.phone_number = phone_number
         self.email = email
 
-    def save_user_details(self):
-        """
-        save_contact method saves contact objects into user_array
-        """
-        User.users_array.append(self)
 
-    @classmethod
-    def display_users(cls):
-        """
-        method that returns the class array
-        """
-        return cls.users_array
 
 
