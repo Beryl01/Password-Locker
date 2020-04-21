@@ -28,3 +28,27 @@ def save_cred(credential):
     """
     credential.save_credential()
 
+def del_user(user):
+    """
+    Function to delete a user
+    """
+    user.delete_user()
+
+def del_cred(credential):
+    """
+    Function to delete all users credentials
+    """
+    credential.delete_credential()
+
+def display_user():
+    """
+    Function that returns saved users
+    """
+    return User.display_users()
+
+def display_cred():
+    """
+    function that returns saved user credentials
+    """
+    return Credential.display_credential()
+
