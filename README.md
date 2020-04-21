@@ -14,8 +14,8 @@ Python3.6
 
 ## {Running unit tests}
 Clone the app on your terminal run
- $ chmod +x testing.py
- $ ./testing.py
+ * $ chmod +x testing.py
+ * $ ./testing.py
 
 ## {Further help}
 For Further questions and assistance reach us on:
