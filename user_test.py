@@ -40,6 +40,14 @@ class TestUser(unittest.TestCase):
         test_user.save_user_details()
         self.assertEqual(len(User.users_array), 2)
 
+    def test_display_all_users(self):
+        """
+        method that returns a list of all users saved
+        """
+        self.assertEqual(User.display_users(), User.users_array)
+
+if __name__ == '__main__':
+    unittest.main()
    
 
     
