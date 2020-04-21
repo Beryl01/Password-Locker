@@ -30,6 +30,16 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user_details()  
         self.assertEqual(len(User.users_array), 1)
 
-    
+    def test_save_multiple_users(self):
+        """
+        test_save_multiple_users to check if we can save multiple users
+        to our users_array
+        """
+        self.new_user.save_user_details()
+        test_user = User("Test", "user", "0712345678", "user@user.com")  
+        test_user.save_user_details()
+        self.assertEqual(len(User.users_array), 2)
+
+   
 
     
