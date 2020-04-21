@@ -18,5 +18,11 @@ class User:
         """
         User.users_array.append(self)
 
+    @classmethod
+    def display_users(cls):
+        """
+        method that returns the class array
+        """
+        return cls.users_array
 
 
