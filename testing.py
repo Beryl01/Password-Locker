@@ -54,19 +54,19 @@ def display_cred():
 
 def main():
 
-    print("Password Locker, choose your path from the list of allowed actions")
+    print("Password Locker, choose what you want to do from the list of allowed actions")
 
     while True:
         print("""Allowed Actions: 
-        \n ad - create a new user account with a user-defined password
-        \n ag - create a new user account with a auto-generated password
-        \n da - display all user accounts 
-        \n ex -exit the contact list 
+        \n def - create a new user account with a user-defined password
+        \n auto - create a new user account with a auto-generated password
+        \n dis - display all user accounts 
+        \n exit -exit the contact list 
         \n""")
 
         short_code = input().lower()
 
-        if short_code == 'ad':
+        if short_code == 'def':
             print("New User")
             print("-"*10)
             print("What site do you want to create an account?")
@@ -91,14 +91,14 @@ def main():
             print("Enter Password")
             pword = input()
 
-            save_user(create_user(f_name, l_name, p_number, e_address))# create and save new user account.
-            save_cred(create_credential(user_name, pword, e_address))# create and save a credential listing for the above user
+            save_user(create_user(f_name, l_name, p_number, e_address))# create and save new user.
+            save_cred(create_credential(user_name, pword, e_address))# create and save credential for the user
             print('\n')
             print(f" A new {site} account by {f_name} {l_name} has successfully been created")
             print(f" The username is {user_name} and the password is {pword}")
             print('\n')
 
-        elif short_code == 'ag':
+        elif short_code == 'auto':
             print("New User")
             print("-" * 10)
             print("What site do you want to create an account?")
@@ -120,36 +120,36 @@ def main():
             print("Enter username")
             user_name = input()
 
-            print("Enter Password...Hint: a password can be generated for you...")
+            print("Enter Password or a password can be generated for you")
             pword = input()
 
             s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
             pword = "".join(random.sample(s, 8))
-            save_user(create_user(f_name,l_name,p_number,e_address))  # create and save new user account.
-            save_cred(create_credential(user_name, pword, e_address))  # create and save a credential listing for the above user
+            save_user(create_user(f_name,l_name,p_number,e_address))  # create and save new user.
+            save_cred(create_credential(user_name, pword, e_address))  # create and save a credential for the user
             print('\n')
             print(f" A new {site} account by {f_name} {l_name} has successfully been created")
             print(f" The username is {user_name} and the password is {pword}")
             print('\n')
 
-        elif short_code == 'da':
+        elif short_code == 'dis':
             if display_user():
-                print("Here is a list of all your user accounts")
+                print("A list of all your user accounts")
                 print('\n')
 
                 for user in display_user():
-                    print(f"{user.first_name} {user.last_name} has an account for {site}")
+                    print(f"Dear {user.first_name} {user.last_name} you have an account for {site}")
 
                 print('\n')
             else:
                 print('\n')
-                print("You don't seem to have any existing accounts")
+                print("You don't have any existing accounts")
                 print('\n')
-        elif short_code == "ex":
-            print(":/ See you soon then...")
+        elif short_code == "exit":
+            print(":/ Lovely to have you")
             break
         else:
-            print(" :( Only key in the allowed actions !!")
+            print(" :( Only type in the allowed actions !!")
 
 if __name__ == '__main__':
     main()
