@@ -1,41 +1,28 @@
-# Author
+## {Author}
 
 Beryl Negesa Otieno
 
-# Description
+## {Project Name}
+Password-Locker-This project was generated using Python3.6
+
+## {Project Description}
 
 A web app to help users crete and store passwords.It will help to manage passwords and even generate new passwords for us.
 
-# Password-Locker
+## {Technologies used}
+Python3.6
 
-This project was generated using Python3.6
+## {Running unit tests}
+Clone the app on your terminal run
+ $ chmod +x testing.py
+ $ ./testing.py
 
-## Development server
+## {Further help}
+For Further questions and assistance reach us on:
+* email: berylnegesa@gmail.com.
+* phone: +254 70123456.
 
-
-
-## Code scaffolding
-
-
-
-## Build
-
-
-
-## Running unit tests
-
-
-
-## Running end-to-end tests
-
-
-
-## Further help
-
-
-
-
-### License
+### {License}
 MIT licence:Permission granted to obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
